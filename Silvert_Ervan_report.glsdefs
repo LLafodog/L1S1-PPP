@@ -1,0 +1,210 @@
+\ifglsentryexists{ppp}{}%
+{%
+\gls@defglossaryentry{ppp}%
+{%
+name={PPP},%
+sort={PPP},%
+type={acronym},%
+first={Projet Personnel et Profesionnel (PPP)},%
+firstplural={Projet Personnel et Profesionnels(PPPs)},%
+text={PPP},%
+plural={PPPs},%
+description={Projet Personnel et Profesionnel},%
+descriptionplural={Projet Personnel et Profesionnel\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Projet Personnel et Profesionnel},%
+longplural={Projet Personnel et Profesionnels},%
+short={PPP},%
+shortplural={PPPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{afjv}{}%
+{%
+\gls@defglossaryentry{afjv}%
+{%
+name={AFJV},%
+sort={AFJV},%
+type={acronym},%
+first={Association Fran\IeC {\c c}ais du Jeu Vid\IeC {\'e}o (AFJV)},%
+firstplural={Association Fran\IeC {\c c}ais du Jeu Vid\IeC {\'e}os(AFJVs)},%
+text={AFJV},%
+plural={AFJVs},%
+description={Association Français du Jeu Vidéo},%
+descriptionplural={Association Français du Jeu Vidéo\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Association Fran\IeC {\c c}ais du Jeu Vid\IeC {\'e}o},%
+longplural={Association Fran\IeC {\c c}ais du Jeu Vid\IeC {\'e}os},%
+short={AFJV},%
+shortplural={AFJVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{poo}{}%
+{%
+\gls@defglossaryentry{poo}%
+{%
+name={POO},%
+sort={POO},%
+type={acronym},%
+first={Programmation Orient\IeC {\'e}e Objet (POO)},%
+firstplural={Programmation Orient\IeC {\'e}e Objets(POOs)},%
+text={POO},%
+plural={POOs},%
+description={Programmation Orientée Objet},%
+descriptionplural={Programmation Orientée Objet\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Programmation Orient\IeC {\'e}e Objet},%
+longplural={Programmation Orient\IeC {\'e}e Objets},%
+short={POO},%
+shortplural={POOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ide}{}%
+{%
+\gls@defglossaryentry{ide}%
+{%
+name={IDE},%
+sort={IDE},%
+type={acronym},%
+first={Integrated Development Environment ou Environnement de d\IeC {\'e}veloppement (IDE)},%
+firstplural={Integrated Development Environment ou Environnement de d\IeC {\'e}veloppements(IDEs)},%
+text={IDE},%
+plural={IDEs},%
+description={Integrated Development Environment ou Environnement de développement},%
+descriptionplural={Integrated Development Environment ou Environnement de développement\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Integrated Development Environment ou Environnement de d\IeC {\'e}veloppement},%
+longplural={Integrated Development Environment ou Environnement de d\IeC {\'e}veloppements},%
+short={IDE},%
+shortplural={IDEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{POO}{}%
+{%
+\gls@defglossaryentry{POO}%
+{%
+name={Programmation Orientée Objet},%
+sort={Programmation Orientée Objet},%
+type={acronym},%
+first={Programmation Orient\IeC {\'e}e Objet},%
+firstplural={Programmation Orient\IeC {\'e}e Objets},%
+text={Programmation Orient\IeC {\'e}e Objet},%
+plural={Programmation Orient\IeC {\'e}e Objets},%
+description={Méthode de programmation majoritairement adopté par les développeurs logiciels.},%
+descriptionplural={Méthode de programmation majoritairement adopté par les développeurs logiciels.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SCRUM}{}%
+{%
+\gls@defglossaryentry{SCRUM}%
+{%
+name={SCRUM},%
+sort={SCRUM},%
+type={acronym},%
+first={SCRUM},%
+firstplural={SCRUMs},%
+text={SCRUM},%
+plural={SCRUMs},%
+description={Scrum est considéré comme une méthode agile.\\ La méthode s'appuie sur le découpage d'un projet en boîtes de temps, nommés « sprints ». Les sprints peuvent durer entre quelques heures et un mois (avec une préférence pour deux semaines). Chaque sprint commence par une estimation suivie d'une planification opérationnelle. Le sprint se termine par une démonstration de ce qui a été achevé et contribue à augmenter la valeur d'affaires du produit. Avant de démarrer un nouveau sprint, l'équipe réalise une rétrospective : elle analyse ce qui s'est passé durant ce sprint, afin de s'améliorer pour le prochain. L'adaptation et la réactivité de l'équipe de développement est facilitée par son auto-organisation. - Source: wikipédia},%
+descriptionplural={Scrum est considéré comme une méthode agile.\\ La méthode s'appuie sur le découpage d'un projet en boîtes de temps, nommés « sprints ». Les sprints peuvent durer entre quelques heures et un mois (avec une préférence pour deux semaines). Chaque sprint commence par une estimation suivie d'une planification opérationnelle. Le sprint se termine par une démonstration de ce qui a été achevé et contribue à augmenter la valeur d'affaires du produit. Avant de démarrer un nouveau sprint, l'équipe réalise une rétrospective : elle analyse ce qui s'est passé durant ce sprint, afin de s'améliorer pour le prochain. L'adaptation et la réactivité de l'équipe de développement est facilitée par son auto-organisation. - Source: wikipédia},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Cenv}{}%
+{%
+\gls@defglossaryentry{Cenv}%
+{%
+name={Cycle en V},%
+sort={Cycle en V},%
+type={acronym},%
+first={Cycle en V},%
+firstplural={Cycle en Vs},%
+text={Cycle en V},%
+plural={Cycle en Vs},%
+description={Le modèle du cycle en V (en comparaison avec les méthodes dites Agile) est un modèle conceptuel de gestion de projet imaginé suite au problème de réactivité du modèle en cascade. Il permet, en cas d'anomalie, de limiter un retour aux étapes précédentes. \\ Les étapes : \\ Analyse des besoins et faisabilité \\ Spécification fonctionnelle \\ Conception architecturale\\ Conception détaillée\\ Codage\\ Test unitaire \\ Test d'intégration\\ Test de validation : recette usine, validation usine, VAU\\ Test d'Acceptation : vérification d'aptitude au bon fonctionnement, VABF\\},%
+descriptionplural={Le modèle du cycle en V (en comparaison avec les méthodes dites Agile) est un modèle conceptuel de gestion de projet imaginé suite au problème de réactivité du modèle en cascade. Il permet, en cas d'anomalie, de limiter un retour aux étapes précédentes. \\ Les étapes : \\ Analyse des besoins et faisabilité \\ Spécification fonctionnelle \\ Conception architecturale\\ Conception détaillée\\ Codage\\ Test unitaire \\ Test d'intégration\\ Test de validation : recette usine, validation usine, VAU\\ Test d'Acceptation : vérification d'aptitude au bon fonctionnement, VABF\\},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

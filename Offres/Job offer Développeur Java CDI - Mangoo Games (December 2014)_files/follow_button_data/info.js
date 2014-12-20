@@ -1,0 +1,1 @@
+/**/twttr.setFollowersCountAndFollowing([{"following":false,"id":"93155000","screen_name":"afjv_twit","name":"AFJV","protected":false,"followers_count":6894,"formatted_followers_count":"6,894 followers","age_gated":false}]);

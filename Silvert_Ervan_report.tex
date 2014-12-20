@@ -1,0 +1,568 @@
+\documentclass[12pt, a4paper]{report} %ne pas oublier de retirer draft
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+% ====
+\usepackage{hyperref,shorttoc,url,hyperref,multicol,eurosym,numprint}
+\usepackage[nomain,acronym,toc]{glossaries} % nomain, if you define glossaries in a file, and you use \include{INP-00-glossary}
+\usepackage[final]{pdfpages} % Inclure plusieurs pages de pdf aisément
+
+
+\makeglossaries
+
+\author{Ervan Silvert}
+\title{Dossier Projet Professionnel \\ L1 Semestre 1}
+\date{Septembre - Décembre}
+
+\begin{document}
+\input{glossaire}
+
+
+% ============ VARIABLES ================
+
+
+% ============ COMMANDS ===============
+\newcommand{\finalword}[1]{\\ \begin{center} \textsc{#1} \end{center} }
+  % Interview 
+\newcommand{\qst}[1]{{\slshape \bfseries \center   #1}}
+\newcommand{\asw}[2]{\paragraph{\scriptsize #1} \begin{quotation} {\slshape  \og #2 \fg}  \end{quotation}}
+\newcommand{\aswTwo}[2]{\paragraph{\scriptsize #1} {\begin{multicols}{2}  \slshape  \og #2 \fg \end{multicols} }}
+\newcommand{\analyse}[1]{ \paragraph{\textbf{Analyse}} {#1} }
+\newcommand{\lil}[1]{{\scriptsize (#1)}}
+% == C/S-ITE == 
+\newcommand{\ecite}[1]{{\cite{#1}}}
+\newcommand{\offsite}[1]{\footnote{Site officiel: \url{#1}}}
+% == PDF ==
+%\newcommand{\pdf}[1]{\begin{figure} \includepdf[pages=1]{Offres/#1} \caption{lol} \end{figure}}
+\newcommand{\pdf}[1]{ \includegraphics[width=7cm]{Offres/#1.pdf}  }
+% -------- ABREVIATION ---------- 
+\newcommand{\cubical}{Fabien Perrot {\slshape aka CodingMarmot}}
+\newcommand{\agg}{Antoine Guerchais, {\slshape le Généreux}}
+\newcommand{\sr}{Sophie Remy}
+\newcommand{\etc}{{\itshape etc.}}
+\newcommand{\lni}{{\slshape La Nuit de L'informatique 2014 }}
+\newcommand{\ingls}{\footnote{La définition de ce mot se trouve dans le glossaire en \ref{glos}}}
+\newcommand{\acrnote}[1]{\acrshort{#1}\ingls{}}
+
+
+\maketitle
+
+\shorttoc{Sommaire}{1}
+
+% ================INTRODUCTION =================
+\chapter{Introduction}
+
+\section*{Explication du sujet}
+Bienvenue dans mon dossier professionnel de premier semestre servant à l'introduction au monde de l'entreprise. Le but est d'entre-apercevoir le monde du travail par le biais d'une interview d'un professionnel pratiquant un travail susceptible de nous plaire et de diverses études de son implémentation économique.
+
+Pour cela, nous avons été amenés à nous étudier, comprendre nos motivations pour savoir plus précisément où nous aimerions finir après nos études. La prochaine section sera donc dédiée à mon introspection.
+
+\section{Introspection}
+Partons de la base: pourquoi suis-je allé en Informatique ? La réponse me vient aisément.
+
+En 2012 un ami m'a montré ce qu'il faisait de son temps libre. Il ouvrait un logiciel et tapait des lignes de codes sans que je ne comprenne rien. \`A la fin, un mini-jeu apparaissait et j'avais des étoiles plein les yeux. Depuis, je suis pris de passion pour le code, j'ai appris le C++ en autodidacte, ai appris avec une librairie graphique et me consacre depuis peu à un gros projet de RPG\footnote{Role Play Game, un style de jeu consistant à incarner un personnage dans une histoire donnée.}.
+
+Dès lors, après une erreur d'orientation me voici en informatique, prêt à compléter mon savoir et réorganiser tout ce que j'ai pu apprendre, apprendre à apprendre et m'organiser. Seulement j'ai peur de ne pas pouvoir accèder au domaine du jeu vidéo. Il en découle un besoin de trouver un autre centre d'intérêt, une voie de secours en cas d'échec et c'est ici que le \acrnote{ppp} m'a aidé. Voici concrètement les metiers qui semblent me plaire, dans l'ordre décroissant d'intérêt.
+
+\paragraph{Programmeur logiciel}
+Concrètement, c'est de la conception et du code, tout ce que j'aime. Toutefois, j'ai peur de tomber dans la situation déplaisante que serait celle de rester plusieurs mois sur un logiciel qui m'ennuie. Reste donc à bien choisir le poste. \`A vrai dire, je pense que le plaisir que j'éprouve à voir un projet grandir et vivre, devenir fonctionnel et cohérent l'emporterait sur l'ennui du logiciel lui-même. Peu m'importe d'être sous des ordres, j'aime voir le résultat croître et comprendre pourquoi tout cela est possible. 
+
+Mon premier programme \small{\emph{\lil{qu'il repose en paix}}} m'a épaté; comment une centaine d'intrusctions a-t-elle pu donner vie à un bonhomme se déplaçant sur des briques ? C'était un genre de Mario mais j'en ai rêvé pendant longtemps, depuis ce jeu je veux toujours faire plus et je pense que ce sentiment pourrait être un point très positif dans ce travail.
+
+\paragraph{Webmaster}
+Ce qui m'a poussé à écrire ce travail dans cette liste est arrivé vite. En C.M.I. \footnote{Cursus Master en Ingénièrie, le cursus d'excellence que je suis.} Programmation nous avons dû créer un site personnel avec comme thème imposé le \og C.V. Numérique à la fin de nos études \fg. Je pensais que le langage du web, par sa caractéristique plus descriptive que fonctionnelle, me déplairait; hors en un après-midi j'ai réalisé un site qui était cohérent, beau et j'ai pu créer exactement ce que je souhaitais. Encore une fois cette fierté de donner naissance m'émut et je dois avouer qu'en faire un métier peut vraiment être passionnant. D'autant plus en utilisant le javascript qui semble être la seule chose qui manque à ma connaissance actuel du HTML/CSS pour que je l'apprécie grandement.
+
+Récemment, j'ai participé à \og \lni \fg . C'était la première fois que je programmais dans une équipe, qu'il y avait une vraie organisation. Nous reparlerons plus en détail de tout cela plus tard, mais dans ce concours j'ai été ammené à programmer le site internet supportant le programme majeur conçu par les Master; ca a été pour moi un vrai plaisir. En faire mon métier pourrait vraiment être intéressant !
+
+D'ailleurs, j'ai pu m'apercevoir au long de mes longues promenades sur la toile que finalement le webdisgn était très recherché par les professionnels. J'ai souvent vu des offres de récompenses pour des sites entièrement préparés pour de nouvelles entreprises; je pense que le marché sur ce point est très ouvert aux débutants. 
+
+\paragraph{Sécurité Web}
+Ce métier en revanche est une nouveauté dans mes goûts, je ne sais vraiment pas si cela me plairait effectivement. Dans les actes, je me rend compte qu'à mesure des programmer des bugs \og invisibles \fg semblent apparaître~\emph{\lil{souvent dus à des négligences comme des > à la place de >= }}, hors les tracker est devenu amusant, très plaisant. De fait, si on considère un réseau internet comme un programme et ses fuites commes les bugs, je pense que ce travail peut être des plus agréables pour moi.
+
+\section{Bilan}
+De très loin, mon passe-temps devenu passion étant la programmation d'un jeu vidéo de son départ à la fin, il est évident que ce rapport portera sur ce métier; à savoir: 
+\finalword{ Programmeur jeu vidéo !} 
+
+% ================ Étude  intrinsèque du métier =================
+
+%=========== INTRODUCTION =========================
+\chapter{Étude intrinsèque du métier }
+\section*{Remarques Préalables}
+\addcontentsline{toc}{section}{Remarques Préalables}
+Tout au long de ce chapitre nous nous appuirons sur les interview de plusieurs professionnels du métier, en se concentrant avant tout sur l'interview principales de M.~Antoine~Guerchais. Une section finale sera dédiées au coordonnées de ces généreux volontaires qui m'ont accordé de leur temps.
+
+\section{Démarches de recherches}
+Le domaine du jeu vidéo étant peu développé dans la région de Franche-comté, j'ai cherché un site servant de hub aux professionnels du domaine. Après quelques recherches, le site de l' \href{http://www.afjv.com/index.php}{\acrnote{afjv}} s'est imposé. 
+
+J'ai d'abord cherché quels studios étaient les plus proches de moi, dans l'optique d'un potentiel stage; il s'est avéré que la Franche-Comté n'habrite aucun studio de jeu vidéo supporté par l'\acrshort{afjv}. J'ai ensuite allongé ma recherche aux régions les plus proches mais aucune réponse ne m'est parvenue des quelques studios qui me plaisaient.
+
+Après une longue attente, j'ai décidé que je ne regarderai plus la distance, mais l'ordre alphabétique: j'ai pris l'annuaire des studios de france et j'ai contacté tous ceux qui me plaisaient de A à C \lil{compris}. J'ai eu 5 réponses totales ou partielles qui m'ont suffit à élaborer ce dossier. Il est l'heure de vous les présenter.
+
+% ============== PRÉSENTATION DES PROFESSIONNELS ============
+\section{Présentation des professionnels}
+\paragraph{Antoine Guerchais, le généreux.}
+Je vous présente la personne la plus agréable que je n'ai jamais rencontrée. Le premier à me répondre, à me répondre intégralement et à remplir le formulaire jusqu'à 7 pages de détails ! Je ne le remercierai jamais assez pour sa bonne volonté, sa gentillesse et son aide. 
+
+\paragraph{Sophie Remy}
+Elle travaille à Battlefact\offsite{http://www.battlefact.com/}, un studio travaillant avec un laboratoire de recherche sur l'intelligence artificielle. En tant que chef de projet, elle a ouvert un nouvel oeil sur le métier de programmeur. Inutile de dire une nouvelle fois que nous la remercions.
+
+\paragraph{\cubical{}}
+Ce polytechnicien de Cubical~Drift \offsite{http://www.planets-cube.com/fr} a répondu dans un bref délai à 5 de mes questions me souhaitant bonne chance. Aucune information à mon niveau n'est négligeable, merci à lui.
+
+% ============== POINT DE VUE TECHNIQUE  ============
+\section{Point de vue technique}
+Étudions tout d'abord ce travail sous un angle pratique: quelles compétences sont attendues ? Dans quelles conditions travaille-t-on ? Toutes les questions que concernent l'exercice du métier.
+
+Dans toute la suite de ce chapitre, nous utiliserons une mise en forme telle que:
+\qst{Ceci est la question posée au professionnel}
+\asw{Auteur}{Ceci est la réponse en citation pure.}
+\analyse{Ceci en sera l'analyse que j'en ferai.}
+\subsection{L'accès au travail}
+\subsubsection{Les études}
+    \label{sssec::studies}
+\qst{Quelles études avez-vous fait ? En comparaison, quelles études auraient suffis à votre embauche ?}
+\asw{\agg}{Après le bac je suis allé à l'université à Rennes 1 pour faire une licence d'Informatique, puis après une première année de Master d'Informatique j'ai décidé de partir faire un Master orienté jeux vidéo à l'ENJMIN \footnote{Note de l'auteur: {\slshape c'est un école publique coordonnée par l'université de la Rochelle, Poitier et le CNAM de Paris.}}
+
+J'aurais pu juste continuer mes études d'informatique mais cette école offre un réel plus quand on veut travailler dans le jeu vidéo, que ça soit au niveau de la culture, de la connaissance du travaille avec une équipe pluridisciplinaire mais aussi les contacts dans le milieu du jeu vidéo.}
+
+\analyse{J'ai appris ici qu'il existait certains Master qui semblent favoriser l'insertion professionnelle dans ce Domaine. Après une petite recherche, il s'avère que cette école possède une grande renommée dans ce monde, si bien que les professionnels sont très intéressés par leurs diplomés. \ecite{enjminpro} Je me rend compte de fait que le CMI Informatique que je suis n'est pas nécessairement le plus adapté avec mon projet professionnel, mais que sa mention pourrait m'aider à intégrer plus facilement l'ENJMIN si vraiment je souhaite y aller. Je retiens également que le master que cette école propose ne semble pas un prédicat au métier, ce qui compte semble plutôt être les compétences informatiques, le travail d'équipe et idéalement les contacts dans le monde du jeu vidéo. Cette analyse est appuyée par un autre témoignage :}
+
+\asw{\sr}{J’ai fait une école d’ingénieur en informatique \lil{ISEP\footnote{{\slshape L'ISEP est une grande Ecole qui forme des ingénieurs généralistes dans tous les domaines du numérique.} Source: leur site.} à Paris}, puis un master 2 pro spécialisé dans le jeu vidéo \lil{Gamagora à Lyon}. 
+Le diplôme d’ingénieur est suffisant pour être embauché, mais une spécialisation offre un avantage non négligeable face aux autres candidats. Il m’aurait aussi été possible de ne pas finir l’école d’ingénieur et de faire ma 5ème année en master, mais c’est assez dommage de quitter une école un an avant le diplôme. }
+
+\analyse{Bien que l'analyse précédente soit appuyée, j'apprend ici qu'il existe une autre école dénommée Gamagora à Lyon \lil{géographiquement plus intéressant par choix personnels} qui semble offrir les mêmes prédispositions à l'instertion professionnel. En effet, on peut y lire sur leur site: 
+\asw{Site officiel\ecite{gamagorasite}}{ [Toutes nos flières] accompagnent les étudiants dans la production d’une maquette de jeu vidéo dans les mêmes conditions qu’un studio de développement en favorisant le travail en équipe et la coopération avec les autres diplômes.}
+ Bien qu'ils ne mentionnent que peu le monde professionnel, apprendre dans les conditions du travail me semble nécessaire à une véritable formation. Le mot de la fin reviendra donc à notre dernier contact: }
+
+\asw{\cubical{}}{J'ai fait 2 ans de prépa maths sup/maths spé, puis 3 ans d'école d'ingénieur en informatique \lil{ex-ESSI à Sophia Antipolis, renommée maintenant Polytech Nice Sophia}.
+Etant donné que je suis un des associés, mes études importaient peu, c'était plus la compétence acquise qui a joué. Mais il vaut toujours mieux faire les meilleures études quand on en a la possibilité. De nos jours le diplôme sert à garantir le salaire, même si sans diplôme on peut faire la même chose qu'un plus diplômé.}
+
+\paragraph{Bilan}
+On retiendra de cette question que:
+\begin{itemize}
+\item
+  Le niveau d'étude \lil{à savoir Master Informatique} suffit à accéder au domaine du jeu vidéo.
+\item
+  Il existe plusieurs Master spécialisant dans le jeu vidéo qui favorisent l'insertition professionnelle.
+\item
+  Les formations ayant mené certains professionnels du domaines sont très diverses \lil{polytechniciens, ingénieurs \dots }.
+\end{itemize}
+
+\subsubsection{Embauche}
+\label{sssec::embauche}
+
+\qst{Comment avez-vous été recruté par votre entreprise ? Pouvez-vous me parler de votre entretien d'embauche ? \lil{Avez-vous trouvé le travail sur internet ou l'\acrshort{afjv} ? Vous ont-ils testé avant de vous engager ?}}
+
+\asw{\agg}{Pour 5 Bits Games c'est simple je n'ai pas été recruté puisque j'en suis un des fondateurs. Mais j'ai rencontré les collègues lors de mes études. Avant 5 Bits Games j'ai  travaillé dans d'autres entreprises dans lesquelles j'avais postulé parfois en effet par l’intermédiaire de l'\acrshort{afjv}. Les candidatures se font toujours par le net. Lors des entretiens souvent c'est une discussion avec le directeur technique, un rh [Directeur des Ressources Humaines] et parfois un producer. Parfois un test technique afin de s'assurer des compétences du candidats. Mais le jeu vidéo est un très petit milieu, on a vite fait de connaître des gens dans un peu tous les studios et ça peut être d'une grande utilité pour apprendre qu'un studio recrute.}
+
+\analyse{Comme je l'avais déduit, l'\acrshort{afjv}
+ joue un rôle fondamentale dans l'embauche du jeu vidéo. Comme nous le verrons dans l'interview de \sr{}, il semblerait que ce site soit un \og hub \fg pour ce domaine. J'apprend également que finalement, tout le monde finit par se connaître, un réseau de connaissance se développe si bien qu'au final il doit être aisé de retrouver du travail \lil{par exemple après la fin d'un studio} dans un nouveau studio puisque les annonces tournent rapidement aux travers de la toile des professionnels. Ainsi il y a deux façons principales de candidater: 
+\begin{enumerate}
+\item 
+  La découverte d'un poste à pourvoir par le bouche à oreille,
+\item
+  La candidature sur internet \lil{d'après \agg{} consistant à l'unique moyen d'atteindre un studio rapidement}.
+\end{enumerate}
+Quant à l'entretien d'embauche, nous nous tournons vers notre deuxième bienfaiteur:}
+\asw{\sr{}}{J’ai trouvé l’annonce sur le site de l’\acrshort{afjv}, et passé un entretien en deux parties: l’une générale \lil{cursus, motivation\dots{}} et l’autre technique \lil{questions sur la \acrshort{poo}, algorithmes\dots{}}. La plupart des entreprises de jeux vidéo font passer ce genre de test à l’entretien.}
+\analyse{Bien qu'elle n'ait pas donné énormément de détails, \sr{} indique que l'entretien d'embauche type qu'elle a connu consiste en une évaluation rapide sur les connaissance techniques puis d'une évaluation personnelle sur la motivation et l'apport qu'elle pourrait engendrer lors de son embauche. Nos cours de \acrshort{ppp} dans la bonne logique nous l'ont déjà dit et nous prépare à cette épreuve.}
+\paragraph{Bilan}
+Nous retiendrons:
+\begin{itemize}
+\item
+  Les demandes de candidatures ont une évoluées avec les moyens et se sont généralisées par le biais d'internet.
+\item
+  L'entretien d'embauche moyen se découpe en deux moitiés, une première théorique et une seconde personnelle.
+\item
+  L'autoentreprenariat me plaît beaucoup.
+\end{itemize}
+\subsubsection{Caractère}
+\label{sssec::caract}
+\qst{Quel caractère pensez-vous nécessaire ou fortuit à votre travail ? \\  Correspondez-vous à ce caractère ?}
+\asw{\agg}{En tant que programmeur je pense qu'une des compétences importantes est la logique. Afin de trouver les meilleurs solution pour rendre compte des mécaniques gameplay développées par le Game Designer. Mais aussi l'organisation car souvent les jeux vidéos sont des projets assez important en nombre d'assets et avec souvent des changements inattendus. Donc sans une bonne organisation on a vite fait de se perdre et le projet a tendance à devenir inutilement complexe.
+
+En tant que programmeur indépendant je pense qu'il faut aussi une bonne grosse dose de passion et une forte détermination. Parce que les déconvenues peuvent être fréquentes et les revenus pas toujours à hauteur des espérances. Donc sans passion la majorité des gens auront tendance à abandonner très vite.}
+\analyse{Le trait le plus important serait donc la logique. Il est vrai que dans mon expérience personnel j'ai souvent dû implémanter une fonctionnalité qui semblait simple mais qui était difficile à décrire. Sans décomposition logique de la fonctionnalité, il est impossible de la programmer sur une machine de Turing ! D'apèrs nos autres interlocuteurs :}
+\asw{\sr{}}{Je pense que le travail de programmeur demande de la rigueur, un esprit logique et de la concentration. Je suis-je pense douée dans ces domaines même si la concentration doit se travailler.}
+\asw{\cubical{}}{Nécessaire : rigueur, ouverture d'esprit, remise en question, curiosité, autodidacte, matheux.
+
+Rien n'est jamais fortuit \lil{à part des défauts}. Des compétences artistiques par exemple pourraient paraître fortuites pour un programmeur, mais c'est en fait l'un des énormes plus que l'on peut avoir. Malheureusement, je n'ai pas un grand caractère artistique, mais j'ai un peu de toutes les qualités nécessaires listées avant !
+}
+\analyse{La logique revient mais elle ajoute de la rigueur et de la concentration. J'aurais tendance à dire que cela s'applique à tous les emplois mais admettons. \'{A} l'inverse, \cubical{} ajoute je pense les trois caractères que j'aurais moi-même énoncés si j'avais eu à me répondre. Se remettre en question est d'une importance capitale d'après moi; du fait que je travaille seul actuellement je dois concevoir les fonctionnalités une à une et il m'est arrivé bien trop de fois que je me dise \og Est-ce bien la meilleure façon de faire ? Ne puis-je donc pas optimisé cela ? \fg{}. 
+
+De plus, la curiosité est, certes souvent de mise dans le cadre de la vie professionnelle, mais plus que recommandée dans le jeu vidéo. Imaginons qu'on soit curieux au moment de développer l'applet principal du jeu, il est fort possible que l'on trouve une nouvelle fonctionnalité qui changera tout le gameplay ! Et quand bien même, à l'heure où la technologie progresse à toute vitesse, je pense que la curiosité dans le domaine de la veille technologique est bonne à prendre.
+
+Enfin, l'autodidaxie est très importante aussi, tant pour rester à jour technologiquement que pour se débrouiller lors de la prise en main de la technologie. Par exemple, j'ai pour ce compte-rendu dû totalement apprendre à créer un glossaire, à utiliser une bibliographie et revu des dizaines de concepts bien en profondeur en solitaire.}
+\paragraph{Bilan}
+Nous retiendrons donc comme profil idéal quelqu'un de:
+\begin{itemize}
+\item
+  Logique, pour la décomposition des fonctionnalités par exemple,
+\item
+  Rigoureux au goût pour l'introspection et autodidacte, afin que son travail soit toujours complet et non parsemés de bug,
+\item
+  Mathématiques, car plus le jeu sera complexe \lil{moteur physique, mouvement paramétrique \etc{}} et plus les mathématiques apparaîtrons. Ne parlons pas des simulations \dots{}
+\end{itemize}
+
+
+
+\subsection{Compétences et motivation}
+
+\subsubsection{Langage de Programmation}
+\qst{Quel langage de programmation vous est nécessaire ? Quel “plus” serait le bienvenu pour votre poste ?}
+\asw{\agg{}}{La majorité du temps je travaille en C\#, surtout dû au moteur que j'utilise le plus Unity3D. Mais aussi parfois en C++. Parfois j'ai besoin de mettre en place des solutions online en PHP/SQL. Des langages de shader pour les rendus graphiques en Cg par exemple.
+
+C++ et C\# sont sûrement les langages les plus utilisés dans le jeu vidéo si j'avais besoin d'un autre langage ça serait sûrement Objective-C qui est très utilisé pour le développement sur iOS.}
+
+\asw{\sr{}}{J’utilise actuellement le C\#. Je pense également que des base de C++ ou tout autre langage utilisant les pointeurs est un plus. Fondamentalement les langages se ressemblent et il est assez facile une fois que l’on en connait quelques-uns, d’en apprendre d’autres. Ce métier est en évolution constantes et les langages et outils évoluent assez vite, il faut savoir s’adapter.}
+
+\asw{\cubical{}}{On utilise du C++ majoritairement, avec un peu de "scripting" unreal engine 4 en "blue print". J'utilise parfois un peu de shell \lil{bash} pour faire des petits traitements, mais l'objectif est de ne jamais trop se perdre dans trop de langages différents pour un même projet.}
+
+\analyse{Je pense qu'avoir mis les trois témoignages à la suite permet de discerner rapidement les traits communs: Le langage C et ses \og dérivés \fg si je peux me permettre cet abus, sont visiblement très communs à ce milieu. Coup de chance que ce soit celui que j'ai appris en autodidacte !
+
+J'ai cru comprendre que le langage C permettait une programmation assez proche de la machine permettant une meilleure fluidité, je comprend donc son implication dans l'application la plus énergivore qu'est le jeu vidéo. 
+
+En plus des traits communs, il est très important de voir que chaque professionnel possède une connaissance de certains langages plus \og singuliers \fg  et qu'ils l'utilisent dans leur projets. Je pensais qu'un logiciel, quel qu'il soit, était dans un unique langage; je me susi fourvoyé ! J'ai donc hâte d'en apprendre un peu plus au cours de mon cursus et vais continuer à travailler mon C++ d'ici là.}
+\paragraph{Bilan}
+Les langages qui me semblent être intéressants pour les programmeurs jeu vidéo sont :
+\begin{itemize}
+\item
+  C, C++ \& C\# : pour leur gestion de la mémoire et leur implantation des plus commune dans le domaine,
+\item
+  PHP et SQL : pour la gestion sur navigateur, je ne suis pas fermé aux jeux sur navigateur,
+\item
+  Objective-C: pour le développement mobile dont l'essor est incroyable cette décennie. 
+\item
+  Et tout langage plus exotique pour la culture, j'imagine que leur connaissance peut débloquer et faciliter la résolution d'un besoin bien particulier.
+\end{itemize}
+
+\subsubsection{Ambitions des témoins}
+Je suis des plus motivés à devenir programmeur de jeu vidéo depuis que j'apprend la programmation, j'ai demandé à mes bienfaiteurs s'ils avaient été dans la même situation que moi. Cette question a bien peu d'intérêt technique mais m'a permis de savoir si je pouvais ou non m'identifier à eux; voici leur réponse.
+\qst{Avez-vous toujours voulu être programmeur de jeu vidéo ? Aviez-vous une expérience \lil{formation ou travail sur votre temps libre } ?}
+\asw{\agg{}}{Je n'ai pas toujours voulu être programmeur de jeu vidéo, j'aime l'informatique depuis le collège et les premier programmes que j'ai développé était quand même des jeux. Mais à l'époque je ne pensais pas forcement travailler dans le jeu. Ce que je savais c’était que je ne voulais pas travailler dans le domaine bancaire ou la sécurité informatique, j'ai toujours été attiré aussi par les domaines artistiques. C'est en apprenant l’existence de l'ENJMIN que j'ai commencer à l'envisager comme une carrière possible.}
+\asw{\sr{}}{J’ai très rapidement voulu travailler dans le jeu vidéo. J’ai donc créé un jeu pour un projet lors de mes études d’ingénieur. Puis, lors de ma spécialisation, un projet était obligatoire, ainsi qu’un stage de 6 mois qui m’ont beaucoup appris sur le métier.}
+\paragraph{Bilan} Le jeu vidéo l'emporte toujours ! 
+
+% ============== POINT DE VUE FONCTIONNEL  ============
+\section{Point de vue fonctionnel}
+Désormais étudions ce travail dans un sens plus personnel; le ressenti des professionnels intérrogés, la journée type du programmeur et toute autre donnée qui ne dépendent plus des compétences.
+
+Rappel, nous utiliserons la même présentation que précédemment.
+\subsection{Étude d'une Journée type}
+\qst{Pouvez-vous me décrire une journée type de travail ? 	
+
+Insistez, je vous prie sur: 
+\begin{itemize}
+\item
+  vos horaires \lil{sont-elles flexibles ?},
+\item
+  vos relations avec vos collègues \lil{ est-ce un travail d'équipe ? }
+\item
+  votre supérieur, si vous en avez un, vous joint-il souvent ? 
+\item
+  votre lieu de travail \lil{ locaux de l'entreprise, compartiment spécial ou bien chez vous peut-être } ?
+\item
+  votre rapport à la fameuse “deadline” dont tous les monde parle et qui stresse les programmeurs.
+\item
+  Vos relations avec d'éventuelles entreprises, d'éventuels clients ou commerciaux ?
+\end{itemize}}
+\aswTwo{\agg}{Mes journées ne sont pas forcement représentatives du travail d'un programmeur dans le jeu vidéo. Et je n'ai pratiquement pas de journée type. Cela change presque toutes les semaines. Je vous propose donc de vous décrire une journée type lorsque je travaillais dans une société de jeux vidéo plus classique et ensuite ce que je fais maintenant. 
+
+{\bfseries Journée type lors de la production de Type:Rider:} 
+
+Arrivée le matin à 9h \lil{ 30mn avant le reste de l'équipe, par choix, donc c'est assez flexible mais pas trop non plus je dois faire mes 7h par jour minimum}, je me fais un thé et me  met à mon poste \lil{ on travaille dans une petite pièce dans les locaux de l'entreprise avec 5 postes de travail, on est plutôt bien installés }. Je lance une update du projet \lil{ on utilise un gestionnaire de version}\footnote{Un gestionnaire de version est un logiciel qui gère automatiquement l'évolution du projet. On peut citer parmis les plus célèbres Git \lil{ou Github pour le site hébergeur} ou encore SVN.} comme ça je suis sûr en début de journée d'avoir la version la plus à jour du projet. Je check mes mails pro, on travaille avec une équipe chargée du son à Toulouse et on a souvent des échanges en décalé parce qu'ils nous envoie les remarques en fin de journée. 
+
+Ensuite je regarde le bug tracker voir si j'ai des petits bugs que je peux corriger avant l'arrivée de l'équipe. \`{A} 9H30 l'équipe arrive, on discute des features\footnote{Anglisisme pour un \og élément \fg à incorporer.} qu'on veut développer dans la journée voir si un autre membre de l'équipe à un besoin critique qui le bloque sur la production.
+Je travaille toute la matinée sur les features planifiées. A 13h on fait notre pause repas. Parfois on en profite pour manger avec notre producteur qui travaille sur plusieurs projets et faire le point sur l'avancée global de la production.
+L'aprem rebelote, développement des features. Parfois je travaille directement avec un level designer pour l'aider dans l'intégration ou mettre en place un script spécifique qu'il n'avait pas anticipé. Si c'est vendredi, toute l'équipe se regroupe en réunion avec le producteur et le chef de projet, on fait le point sur l'avancée \lil{c'est notre point de fin de \gls{SCRUM}\footnote{Définition dans le glossaire. \cite{wikiscrum}}}, on vérifie tous les features de la semaine et on décide de l'objectif pour la semaine suivante. 
+
+Voilà ça c'est quand tout se passe bien mais en vrai y a souvent plein d’imprévus. La deadline\footnote{Anglisisme pour date limite; c'est la bête noire des programmeurs qui limitent tous les régimes pour être commercialement prêt à l'heure.} c'est toujours un peu stressant après sur ce projet on la connaissait depuis le départ et on a décidé de trancher dans les features quand on voyait que ça passerait pas donc on l'a plutôt bien anticipée même si on a eu droit à un mois de rab parce que le client était très content du boulot. 
+\\[1cm]
+\rule{\columnwidth{}}{0.01cm}
+
+Maintenant c'est très différent, 5 Bits Games est notre propre société, nous n’avons pas de locaux donc chacun travail de chez lui. La raison principale c'est qu'on est tous à distance \lil{ Paris, Grenoble, Montréal } et l'on travaille avec d'autres amis à Montpellier. Notre lieu de travail commun c'est Skype, on est connecté en permanence. \`{A} coté de ça je suis auto-entrepreneur et je donne des cours toutes les semaines dans une école le vendredi et samedi.
+En fonction des semaines et du nombre de cours que j'ai à donner, j'organise ma journée entre la préparation des cours et les objectifs qu'on s'est fixé avec l'équipe. Tous les matins, midis et soirs je vérifie la boite pro de la société parce qu'on doit être assez réactif avec les mails de nos éditeurs mais aussi suivre les demandes de la presse, prendre en compte les feedbacks\footnote{Anglisisme de Avis retour, les commentaires que les utilisateurs laissent pour l'amélioration.} de nos joueurs et parfois on reçoit des propositions de potentiels clients ou de personnes qui veulent travailler avec nous. Souvent je commence ma journée vers 9h et je fini entre 18h ou 23h. Le fait de créer sa société \lil{ 5 Bits Games à moins d'un an } impose pas mal de travail surtout qu'on essaye de fonctionner sans emprunts on ne fait pas appel aux banques, on fonctionne entièrement sur fonds propres, ce qui nous impose de trouver d'autres ressources \lil{ par exemple la formation } mais ça implique une double charge de travail. 
+
+Comme la majorité de mon travail se passe chez moi, j'essaye de profiter de tous les événements professionnels pour aller rencontrer d'autres personnes du jeux vidéo partager nos problèmes et parfois discuter de collaboration professionnelle.
+
+En période de production comme on est sur des fuseaux horaires différents et qu'en plus on est partagé entre 5 Bits Games et d'autres métiers \lil{ parfois dans d'autres studios de jeux ou sur des formations } le dimanche soir est le seul moment ou l'on sait qu'on peut être tous disponibles donc le dimanche c'est soir de réunion.}
+\analyse{Comprenez-vous maintenant pourquoi \agg{} est si bon à mes yeux ? Tant de détails, on se croirait totalement immergé dans son quotidien ! Bien, passons à 'analyse. 
+
+\subparagraph{Horaires} 
+ Je note, pour reprendre ma question, que ses horaires étaient assez agréables. Je me plairais dans cette situation à vrai dire. L'important ici semblerait résider dans les sept heures quotidiennes, le concept est intéressant.
+
+\subparagraph{Gestionnaire}
+Je note également l'importance d'un gestionnaire de version pour ce travail d'équipe. Il commence par l'update de sa version, puis par le debbuger, les différentes features \lil{probablement en gestion multi-branch} et tout ceci me plaît beaucoup. J'apprend justement actuellement à gérer tout ceci par moi-même et ma découverte très récemment des branches m'annène à concevoir l'ampleur de leur travail \lil{ils semblent être cinq}. 
+
+\subparagraph{Travail d'équipe}
+Encore à propos du travail d'équipe, il semble très dense entre les réunions hebdomadaires, les chargés du sons à Toulouse, l'entraide si quelqu'un est dans le besoin, la coopération avec le level-designer, le producteur, les éditeurs \dots{}. Ce côté m'effraie un peu, j'ai peur de ne pas être des plus adaptés pour le travail d'équipe bien que \lni fut une superbe expérience pour moi. Cela dit, tout cela semble très structuré ce qui nous ammène au prochain point.
+
+\subparagraph{Organisation}
+Le travail est très ordonné je trouve, et ça me plait beaucoup. Il y a un emploi du temps quotidien, herbdomadaire avec des features à implémenter à chaque date, des réunions préparées; bref beaucoup de précision ce qui me ravit. }
+
+\subparagraph{Auto-entreprenariat}
+Grande surprise avec ce témoignage c'est d'avoir la version \og studio classique \fg{} et la version \og Do It Yourself \fg . Il s'avère que cette dernière semble vraiment plaisante; certes il travaille beaucoup mais il est maître de ce qu'il fait. Il a des horaires plus lourdes et aucun local mais je suis sûr qu'avec un peu de temps ils finiront par devenir un grand studio \lil{ je leur souhaite au moins } et cette possibilité d'évolution générale du studio est un point qui m'intéresse beaucoup; travailler dans une grande firme déjà mondialement implantée ne semble plus être ce qu'il m'attire le plus.
+
+Seulement, nous ne pouvons nous baser sur deux jours types, essayons d'agrandir notre échantillonnage un dernier témoignage sur ce sujet de \sr .
+
+\aswTwo{\sr}{Une journée de programmeur n’est pas vraiment calée sur des horaires mais va surtout consister à de l’architecture \lil{ trouver une solution }, de la programmation \lil{ mettre en application la solution } et des tests pour vérifier que tout marche \lil{ y compris ce qui marchait avant ^^ }
+	
+Les horaires sont flexibles avec des plages horaires fixes pour que des réunions puissent être organisées sans qu’il ne manque des membres de l’équipe. 
+
+Le travail en équipe va dépendre de la taille de l’entreprise dans laquelle vous travaillez. Ici, les interactions sont fréquentes et il faut savoir échanger avec des corps de métier différents pour bien prendre en compte toutes les contraintes d’un sujet.
+
+Étant chef de projet, mon supérieur ne me joint pas souvent \lil{ environ une fois par semaine }, principalement pour des validations et directives pour le futur du projet. Pour ma part, nous utilisons la méthode agile \gls{SCRUM} et je ne vais voir les membres de mon équipe dans ce cadre que pour suivre des fonctionnalités qui prennent du retard ou pour aider à résoudre des problèmes. Je réunis mon équipe une fois toutes les deux semaines pour faire un point sur le projet.
+
+Nos locaux sont situés dans une pépinière d’entreprise, dans un open space. Cela facilite les échanges, et le fait de ne pas avoir de bureau particulier permet aussi de moins faire de différences de hiérarchie.
+
+Les deadlines sont ces moments où une version doit être livrée, des bugs corrigés. Le stress que cela engendre est principalement dû au fait de devoir travailler dans l’urgence sans toujours prendre le recul nécessaire. Une résolution de bug pouvant faire apparaître un autre bug, il est important de bien tester. Cela peut parfois entrainer des heures supplémentaires.
+
+Le porteur du projet \lil{ mon supérieur } n’est pas un professionnel du jeu vidéo. Cela entraine, comme lors de la relation avec un client, des propositions ou exigences parfois farfelues, qu’il faut savoir rediriger ou modérer. Parfois il faut faire ce que vous estimez être mauvais pour le projet, si le client l’exige. C’est un des aspects les plus difficiles des métiers du jeu.}
+
+\analyse{Nous retrouvons l'essentiel des points travaillés auparavant: le travail d'équipe, les horaires, l'organisation \dots{}. Toutefois, \sr{} m'apprend une nouvelle chose, c'est un aspect que je n'aurais pas su deviner sans cette interview; à savoir le fait d'obéir au client avant le bien du jeu. Je pensais que si l'idée du client ne semblait pas la plus ingénieuse pour que le jeu soit meilleur impliquait que l'idée n'était pas soutenue mais il semblerait que ceci soit faux. Cela me gène assez pour tout vous dire, mais je peux comprendre. D'ailleurs, j'imagine que le chef de projet est celui qui est principalement soumis à cette situation, et je ne tiens pas à l'heure actuelle à le devenir. J'aime bien trop coder !}
+
+
+\subsection{Étude du schéma type}
+\label{ssec::dev}
+Je me suis interrogé sur le chemin qu'empruntait le jeu vidéo depuis sa création jusqu'à sa mise en commerce. J'ai imaginé quatre phases à savoir 
+\begin{enumerate}
+\item
+  La conception du jeu vidéo, où l'idée est émise,
+\item
+  La création du jeu vidéo, du code et graphismes en somme,
+\item
+  Le test et poffinage du jeu vidéo, envoie à des professionnels du test, mise en place de la version $\beta $,
+\item
+  Enfin, commercialisation par d'éventuels éditeurs.
+\end{enumerate}
+J'ai donc posé cette question à mes bienfaiteurs et voici leur réponse.
+\qst{Nous sommes dans un contexte de jeu vidéo, pouvez-vous m'indiquer dans la limite du possible \lil{et de votre motivation}, les étapes depuis l'idée jusqu'à sa commercialisation puis votre implication dans ces diverses étapes ?}
+\aswTwo{\agg{}}{La plus part des projets de jeux vidéo démarre par ce que l'on appelle une {\bfseries pré-production}. Une équipe de taille réduite travaille sur le concept, commence a faire des petits prototypes pour voir si le projet semble réalisable et s'il est fun à jouer ou que ça nous semble intéressant. \`{A}  la fin de cette phase soit le projet est validé par la société si la société a l'argent pour le développer, soit il faut rechercher des {\bfseries financements}, aides de certains organismes, réponses à des appels d'offre, démarcher des éditeurs. 
+
+Un fois les fond récoltés \lil{ ou du moins assurés }, la {\bfseries production} est lancée. En générale à ce moment la taille de l'équipe augmente afin de répondre à tous les besoins de la production. Certaines deadlines sont fixées ou pas et on commence le {\bfseries développement}. La majorité de studio travaille en méthode agile \lil{ La méthode du \gls{Cenv} \footnote{Définition dans le glossaire en \ref{glos}. \cite{wikicenv}} ne peut pas s'appliquer au modèle du jeu vidéo qui est en mutation constante pendant tout la production }. Du coup s’enchaîne des cycles courts où l'objectif est d'avoir en permanence une version jouable du jeu.
+
+La première étape est la {\bfseries vertical slice}, c'est le moment ou tous les features du jeu sont disponibles. Tout le contenu n'est pas forcement produit mais le jeu fonctionne. Selon les studios cette étape correspond à l'alpha du jeu.
+
+Puis arrive la{\bfseries  beta}, lorsque tout le contenu et les features du jeu sont disponibles. Le jeu peut être joué du début à la fin mais il peut rester des bugs. Certaines choses qui ne fonctionne pas bien. \`{A} partir de maintenant on se concentre essentiellement sur l'amélioration de la qualité du jeu.
+Ensuite quand la majorité des bugs semble corrigé  c'est la {\bfseries candidate master}. Le jeu est envoyé à des équipes de testeurs qui vont se charger de retourner le jeu dans tous les sens et voir s'il correspond bien au standard du marcher et respecte les {\bfseries guidelines} des fabricants de console ou de téléphone.
+Quand tout est ok on passe le jeu en {\bfseries Gold Master}. Cette version est envoyée aux consoliers et aux magasins en lignes \lil{ exemple Steam } pour qu'ils approuvent la distribution.
+La dernière étape qu'on a tendance à oublier c'est le {\bfseries support}. Une fois sortie ce n'est pas rare que les joueurs aient des problèmes. Donc le développement continue pour corriger les bugs qu'on aurait manqué ou répondre à aux questions de certains joueurs.}
+
+\analyse{Résumons. Je compte ici six grandes étapes à la commercialisation d'un jeu depuis sa conception. 
+\begin{description}
+\item[La pré-production] Elle consiste en la conception du jeu: le gameplay, les choses à prévoir, quelques brouillons pour confirmer l'utilité du jeu \lil{à savoir la distraction}. L'équipe est à ce point réduite.
+\item[Le financement] Une fois l'idée prête à être présentée, l'équipe cherche le financement nécessaire pour produire le jeu; ils démarchent des éditeurs, répondent à des  appels d'offres \etc{}
+\item[La production] Une fois tout le financement rassemblé et l'idée prête à être mise en place, l'équippe recrute de nouveaux professionnels pour combler les lacunes. L'emploi du temps est fixé à ce moment là.
+\item[Le développement]
+Ici nous avons plusieurs sous-étapes:
+\begin{description}
+\item[La \emph{vertical slice} ou \emph{alpha}] C'est la toute première version jouable du jeu. Il y a certes de nombreux bugs, des choses manquantes mais l'essentiel y est.
+\item[La \emph{Beta}] Première version complète du jeu, du début à la fin il est prêt à être joué mais reste bugué.
+\item[La \emph{candidate master}] Litérralement la meilleure candidate, c'est la version du jeu qui est envoyée aux testeurs. Ceux-ci sont en charge de la décortiquer dans ses moindres détails pour y extraire tous les problèmes et l'améliorer par la suite.
+\item[La \emph{Gold Master}] Une fois tous ces pas faits, on obtient la version finale ou \emph{Gold Master} qui est envoyée à tous les distributeurs. 
+\end{description}
+\item[La comercialisation] Tout a été dit dans l'étape de la \emph{Gold master}, l'argent afflux et le studio a fait le plus gros du travail.
+\item[Le support] Enfin, il ne faut pas laisser tomber les chers clients qui ont acheté le jeu et une phase de support demeure. Souvent elle finit par être abandonnée plusieurs années après \lil{bien que cela dépendent totalement du studio}.
+\end{description}
+Notre autre invitée a également donné sa version du développement, écoutons-la.
+}
+
+\aswTwo{\sr{}}{Tout d’abord, le {\bfseries porteur de l’idée} va s’entourer de quelques personnes \lil{designer en général} pour tester la viabilité théorique de l’idée. Puis {\bfseries  une équipe restreinte} va être créée \lil{{\bfseries chef de projet}, {\bfseries directeur artistique} et {\bfseries directeur technique} plus éventuellement quelques {\bfseries artistes} et {\bfseries programmeurs}} pour lancer un prototype et voir la faisabilité technique du projet. Une fois cela validé, {\bfseries l’équipe s’agrandit} pour réaliser le développement du projet. Au besoin, parallèlement, un {\bfseries responsable commercial} va rechercher et trouver un {\bfseries éditeur} pour le jeu qui financera en partie la production. Enfin le {\bfseries marketing}, cherche à mettre en avant le jeu sur tous les supports possibles.}
+
+\analyse{Cette réponse est sur le point ressource humaine bien plus complète. J'aimerais une nouvelle fois lister ce que j'ai appris ici, à savoir les différents membres d'un studio \emph{a priori}.
+\begin{description}
+  \item[Rôle moral] 
+  \begin{description}
+    \item[Le porteur de l'idée] Est celui qui a eu l'idée du jeu vidéo et probablement le plus important.
+    \item[L'équipe restreinte] Le premier commité en charge de la pré-production, il met tout en place.
+    \item[L'équipe agrandit] Ce que j'aurais tendance à appelé effectivement le studio, l'ensemble de ceux qui produisent le jeu.
+  \end{description}
+
+  \item[Rôle fonctionnel]
+   \begin{description}
+     \item[Chef de projet] Tout comme \sr{} il s'agit du coordinateur, il donne un travail à chaque membre et vérifie que tout se passe bien. Le cas échéant il intervient pour aider les membres en difficulté. Si l'équipe était un homme, le chef en est le cerveau.
+     \item[Directeur artistique] Est responsable du contenu artistique du produit, du concept à la livraison et coordonne l'équipe de graphistes tout au long du développement du jeu. \cite{onisepjv};
+     \item[Directeur technique] Si j'ai bien compris, il coordine seulement les programmeurs. Il me semble aussi qu'il s'appelle \emph{Architecte technique} car il gère l'architeture du programme.
+     \item[Artistes \& programmeurs] Les membres sous la juridiction des deux directeurs précédents. Ils sont respectivement en charge de l'aspect visuel et de la programmation informatique du jeu.
+     \item[Marketing ou responsable commercial] Le commercial qui n'intervient pas dans la conception du jeu si ce n'est qu'il négocie le jeu auprès des distributeurs et acheteurs potentiels. Ceci peut imposer des contraintes au jeu.
+   \end{description}
+\end{description}
+En somme, nous avons vu ici qui faisait quoi à quel moment, ce qui me semble être parfait ! 
+}
+
+\subsection{Condition de travail}
+J'ai été curieux de savoir comment ils travaillaient, plus que dans leur langage de programmation; sur quelle machine travaillent-ils et en sont-ils satisfaits ? Voici leurs témoignages.
+
+\qst{Quel(s) logiciel(s) utilisez-vous ?}
+\asw{\agg{}}{Actuellement je travaille essentiellement avec Unity3D, MonoDevelop et FMOD studio, Steam 
+
+ Pour le coté prod SVN, Tortoise, SourceForge, GoogleDrive, Skype.}
+\asw{\sr{}}{Unity 3D, Visual Studio}
+\asw{\cubical{}}{Visual Studio C++ 2013 et Unreal Engine 4 majoritairement.}
+
+\analyse{Qu'est-ce que ce Unity3D qui semble être si important à ce métier ? C'est un logiciel qui fabrique avec de nombreux outils donc plus facilement un moteur 3D.
+ Je ne me suis pas étalé sur la question. Personnellement j'ai quelques freins avec les logiciels non-libres, et encore plus avec ceux provenant de Microsoft\lil{comme l'\acrnote{ide} Visual Studio} et je trouve ça triste que les studios aujourd'hui dépensent encore de l'argent à l'achat d'une licence pour l'utilisation d'un logiciel qui sera bientôt très largement dépassé par une version libre et éthique. Certes l'heure n'est pas encore au tout libre \lil{et tout n'est pas disponible dans le libre} mais il me semble une évidence que tout le monde serait gagnant à se priver de se priver \lil{cesser les logiciels privatifs en soit}. 
+
+Autrement, hors du contenu éthique, je vois qu'il existe beaucoup d'outils, et autant que je n'apprendrais certainement pas dans mon cursus CMI. Ils ont toutefois l'air fort intéressants d'un oeil rapide. }
+
+\qst{Quel(s) langage(s) utilisez-vous ?}
+\asw{\sr{}}{C\# }
+\asw{\agg{}}{C\# }
+\analyse{Il semblerait que le langage type de la programmation de jeu video s'impose en C\#{}. Je ne connais pas encore ce langage mais les quelques tutoriels que j'ai suivis ne semblaient pas trop l'éloigner du C++ que je connais mieux. } 
+\qst{Les moyens technologiques mis à votre disposition vous satisfont-ils ? \lil{Idéalement, quels sont-ils ?}}
+\asw{\agg{}}{Les moyens technologiques à ma disposition sont mon matériel informatique personnel laptop, PC desktop, tablettes. Le desktop est nécessaire pour travailler confortablement chez moi. Comme je bouge régulièrement et que je dois toujours être joignable et pouvoir travailler de n'importe où, le laptop est nécessaire également \lil{aussi pour mon travail d'enseignant}. Les tablettes me permettent de travailler sur des applications mobiles Android.
+
+ Ce qui me manque vraiment pour le développement futur de notre société c'est surement d'avoir des kits de développements console.}
+\asw{\sr{}}{Les moyens mis à disposition sont bons. L’idéal étant d’avoir un pc assez puissant pour ne pas attendre trop longtemps lors des compilations, ainsi que deux écrans pour tester, programmer, débugger \dots{} en même temps.}
+\asw{\cubical{}}{J'ai une machine suffisamment puissante pour faire le développement, un bureau, un clavier, une souris, c'est tout ce dont j'ai besoin ! Les autres développeur ont la même chose, et on a aussi un mac pour faire le portage mac et un Oculus rift pour le jour où l'on voudra porter le jeu dessus.}
+\analyse{Pour résumer, il faut un bon ordinateur pour compiler rapidement, un double écran pour le faire à coter du code et diverses plateformes pour tester l'exportabilités du jeu. J'avoue que cette configuration ne m'est pas étrangère \lil{excepté pour le portage sur mac} et de loin très confortable. Je suis content d'avoir appris ces conditions de travail.}
+
+\subsection{Aspects et perspectives possibles d'évolution}
+Dans cette section, je me renseigne sur les perspectives qu'offre ce travail; si une évolution est possible voire souhaitable \etc{} J'ai posé d'une traite une seconde question sur leurs intentions si demain ils étaients virés afin de comprendre comment ils réagiraient dans une situation dite \og extrême \fg .
+
+\asw{\agg{}}{Le jeux vidéo est en pleine explosion c'est \og l'industrie culturelle \fg{} la plus importante en terme de chiffre d'affaire devant le cinéma. Le publique du jeu vidéo est de plus en plus large et touche toutes les catégories sociales. L'apprentissage \lil{serious game}, l'art \lil{installation numérique}, les télés \lil{nouvelles écritures} s'interessent de prêt aux jeux vidéo et empruntent souvent les codes et technologies du jeu vidéo. Du coup je pense que c'est un métier en perpétuel mouvement et qui offre de nombreuses perspectives d'avenir.
+Par contre il faut être lucide devant la facade de première industrie culturelle c'est un milieu très dur pour beaucoup d'entreprise et il y a très régulièrement des boites qui ferment. 
+
+En tant que cofondateur mon évolution dépend de ce qu'on fera de notre société. Ce qui est sûr c'est que même si notre société ferme un jour je continuerais à travailler dans le jeu ou alors du moins pour des applications interactives.}
+
+\asw{\sr{}}{Mon cas en est un bon exemple, je suis entrée dans l’entreprise en tant que programmeur sénior. Par ma motivation, j’ai pu devenir product owner. Par curiosité j’ai également commencé à travailler le design. Les perspectives sont cependant, je pense, plus nombreuses dans les entreprises de taille petite ou moyenne.
+La réorientation d’un programmeur peut se faire dans de nombreux domaines et il est possible de retrouver un emploi en quelques mois. Cependant le jeu vidéo reste ma préférence et les place y sont plus rares.}
+
+\analyse{Tous les deux sont d'accord sur le fait que le jeu vidéo offre des places plus prisées que d'autres domaines de l'informatique. Les places sont donc peut-être plus rare, plus incertaines au point que l'entreprise tombe; mais je pense qu'avec assez de volonté et un jeu assez intéressant il est facile de survivre. Malgré ces avertissement je reste entièrement motivé pour ce projet professionnel ! 
+
+En terme d'évolution, il semblerait y avoir deux voies: étant programmeur jeu vidéo l'on peut monter dans la hièrarchie et devenir architecte voire chef de projet \lil{puis ce qui suit} ou alors l'on prend son envol en tant qu'auto-entrepreneur comme \agg{} et suivons une voie, certes plus risquée, mais aux possibilités innombrables ! Vous aurez donc compris cette envie qui croît en moi de gérer mon propre studio.}
+
+\section{Point de vue pécunier}
+\qst{Je conçois l'éventualité que vous souhaiteriez rester discret sur ce point. Pouvez-vous tout de même me parler de vos revenus \lil{fourchette mensuelle/annuelle ou estimation de votre satisfaction par rapport à celle-ci ?} et s'il y en a, des avantages qu'offrent votre entreprise ? \lil{tickets restaurant, voiture de fonction même si j'en doute, vous comprenez l'idée.}}
+
+\asw{\agg{}}{Je ne peux pas vraiment donner d'information la dessus. J'ai toujours eu des situations très particulières. En plus de mon salaire je touche des droits d'auteurs sur la plupart de mes projets mais cela n'arrive pratiquement jamais je pense même que je suis un des seuls programmeurs dans cette situations en France. Le salaire moyen pour un junior dans le jeu vidéo en france tourne entre \numprint{1500}~\euro{} et \numprint{2200}~\euro{} avec souvent des tickets restaurant. De mon coté actuellement en tant que fondateur de 5 bits games nous ne nous versons pas de salaire. En tant qu'auto-entrepreneur mes salaires annexes sont variables en fonction des mois.}
+
+\asw{\sr{}}{Je gagne actuellement \numprint{2800}~\euro{} \lil{soit \numprint{2200}} par mois. C’est relativement peu, surtout depuis que j’ai pris plus de responsabilités. Je dois donc dire que je ne suis pas actuellement satisfaite de ce salaire, sachant qu’il n’y a aucun avantage à côté. Le lancement de notre jeu va j’espère permettre de corriger cela bientôt.}
+
+\analyse{Je comprend qu'ils aient voulu garder un peu d'intimité sur ce sujet si délicat en France. Toutefois je retiendrais donc que le salaire moyen d'un débutant est autour de \numprint{1800}~\euro{}.
+
+Je retiens également que ce salaire peut varier dans la période du développement en cours \lil{périodes vues en \ref{ssec::dev}} et le rôle occupé dans le studio. Je ne comprend pas vraiment cet idée de droits d'auteur mais en vue des propos que \agg{}  tient à ce sujet nous ne nous étalerons pas sur ce sujet.}
+
+\section{Coordonnées}
+Les interview sont maintenant terminées, nous allons passer à l'étude marchétaire du métier. Avant cela, donnons les coordonnées de mes généreux mescènes pour témoigner de leur existence:
+
+\subsection{\agg{}}
+\qst{Un mot pour la fin ?}
+\asw{}{J'adore mon métier, je pense que je m’épanouis complètement dans un métier qui mêle le code et la création. Mais c'est un métier assez difficile psychologiquement, et les phases de joies et de satisfaction alternent souvent avec des phases de doute pendant la production.
+
+Être sociable, travailler dans le jeux vidéo demande de parler avec énormément de monde avec des compétences très diverses. Et ils faut être à l'écoute des demandes de tous.
+
+Si c'est ce que tu veux faire accroche toi, c'est parfois dur mais quand on reçoit des mails de joueurs qui ont adorer votre jeu ça vaut le coup. Et \og{} surtout soyez Ponk \fg }
+\begin{table}[hb]
+\begin{center}
+\begin{tabular}{ll}
+\hline{}
+Nom & Guerchais \\
+Prénom & Antoine \\
+Entreprise & 5 Bits Games \\
+Rôle & Co-fondateur \\
+Téléphone & + (33) 06 51 86 12 20 \\
+Email & antoine.guerchais@gmail.com \\
+Web & antoineguerchais.fr \\
+LinkedIn & \url{fr.linkedin.com/in/antoineguerchais} \\
+\hline{}
+\end{tabular}
+\label{tab::coord_agg}
+\caption{Coordonnées de \agg{}}
+\end{center}
+\end{table}
+
+\asw{\sr{}}{Travail épanouissant, déçue du salaire \\ Rigueur \\ Bonne chance à vous!}
+\begin{table}[hb]
+\begin{center}
+\begin{tabular}{ll}
+\hline{}
+Nom & Remy \\
+Prénom & Sophie \\
+Entreprise & Battles Factory \\
+Rôle & Senor Programmer \and Lead Project \\
+Email & s.remy@battlefact.com \\
+Facebook & \url{www.facebook.com/warsandbattles} \\
+Twitter & :@warsandbattles \\
+LinkedIn & \url{https://www.linkedin.com/pub/sophie-remy/21/407/aa8} \\
+
+\hline{}
+\end{tabular}
+\label{tab::coord_sr}
+\caption{Coordonnées de \sr{}}
+\end{center}
+\end{table}
+
+\asw{\cubical{}}{Bonne continuation !}
+\begin{table}[hb]
+\begin{center}
+\begin{tabular}{ll}
+\hline{}
+Nom & Perrot \\
+Prénom & Fabien \\
+Entreprise & Cubical Drift \lil{ou Planet$^3$} \\
+Site de l'entreprise & https://www.planets-cube.com/fr/equipe.html \\
+Rôle & Lead Game Programmer and Co-founder \\
+Email & S'adresser ici contact@planets-cube.com \lil{Ils sont au courant si vous devez les contacter.} \\
+LinkedIn & \url{https://www.linkedin.com/pub/fabien-perrot/4/913/106} \\
+
+\hline{}
+\end{tabular}
+\label{tab::coord_sr}
+\caption{Coordonnées de \sr{}}
+\end{center}
+\end{table}
+
+% ================ Étude marchétaire =================
+\chapter{Étude marchétaire} 
+\paragraph{Introduction}
+Nous avons actuellement parcouru le métier en long et en large, depuis le recrutement jusqu'aux perspectives d'évolutions. Seulement, étudier le métier de président ne nous dit pas qu'il n'y a qu'un seul président; nous allons donc maintenant étudier l'état du métier sur le marché: les places sont-elles très limitées ou assez diverses ? Quelle genre de compétence est attendu à l'embauche ? Quelle paye espérer ? 
+\paragraph{Documentation}
+Pour cette étude du marché, je me suis rendu sur le site de l'\acrshort{afjv} \footnote{rappel de l'adresse \lil{ici celle des annonces} : \url{http://emploi.afjv.com/video_game_ads.php}} et ai pris arbitrairement cinq annonces de recherche de programmeur jeu vidéo. Seul un a été sélectionné car il m'intriguait grandement, celui d'ingénieur C++. Vous trouverez ces annonces sauvegardées en annexes avec leur lien internet si elles sont encore disponibles d'ici votre lecture. Rendez-vous en \ref{appendix} pour les annonces.
+\section{Profil type du candidat}
+
+\section{Profil géographique}
+\section{Évolution à attendre}
+\section{Exemples d'offres}
+
+% ================ Comparaison avec mon propre profil=================
+\section{Situation actuelle}
+%Opposition à:
+\section{Situation escomptée}
+
+\section{Démarches entreprises}
+%oppositions à:
+\section{Démarches à entreprendre}
+
+%Inclure des exemples court,moyen,long terme
+
+
+
+%%Conclure sur le fait de monter son entreprise ?
+
+\newpage
+\pdf{developper_java}
+\pdf{gameplay_UI}
+\pdf{programmer_online}
+\pdf{programmer_IA}
+\pdf{ing_c++}
+
+% ===== SITOGRAPHY =========
+\bibliographystyle{plain}
+\renewcommand{\bibname}{Sitographie}
+\bibliography{sitographie}
+\addcontentsline{toc}{chapter}{Sitography}
+% ===== TOC ================
+\shorttoc{Table des matières}{3}
+\tableofcontents % à retirer à la fin !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\addcontentsline{toc}{chapter}{Table des matières}
+% ===== ABSTRACT ==========
+\begin{abstract} %résumé
+\end{abstract}
+
+%====== GLOSSARIES =========
+\printglossaries
+\label{glos}
+\addcontentsline{toc}{chapter}{Glossaire}
+\end{document}
