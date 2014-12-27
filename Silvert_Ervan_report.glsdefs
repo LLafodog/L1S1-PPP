@@ -118,6 +118,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{esa}{}%
+{%
+\gls@defglossaryentry{esa}%
+{%
+name={ESA},%
+sort={ESA},%
+type={acronym},%
+first={Entertainment Software Association (ESA)},%
+firstplural={Entertainment Software Associations(ESAs)},%
+text={ESA},%
+plural={ESAs},%
+description={Entertainment Software Association},%
+descriptionplural={Entertainment Software Association\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Entertainment Software Association},%
+longplural={Entertainment Software Associations},%
+short={ESA},%
+shortplural={ESAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{POO}{}%
 {%
 \gls@defglossaryentry{POO}%

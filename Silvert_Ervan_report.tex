@@ -24,16 +24,23 @@
 
 % ============ COMMANDS ===============
 \newcommand{\finalword}[1]{\\ \begin{center} \textsc{#1} \end{center} }
-  % Interview 
+% ----------- Interview ---------
 \newcommand{\qst}[1]{{\slshape \bfseries \center   #1}}
 \newcommand{\asw}[2]{\paragraph{\scriptsize #1} \begin{quotation} {\slshape  \og #2 \fg}  \end{quotation}}
 \newcommand{\aswTwo}[2]{\paragraph{\scriptsize #1} {\begin{multicols}{2}  \slshape  \og #2 \fg \end{multicols} }}
 \newcommand{\analyse}[1]{ \paragraph{\textbf{Analyse}} {#1} }
 \newcommand{\lil}[1]{{\scriptsize (#1)}}
-% == C/S-ITE == 
+% ----------- Markéting
+\newcommand{\java}    {l'annonce de recrutement d'un developpeur java }
+\newcommand{\gameplay}{l'annonce de recrutement d'un développeur en gameplay UI }
+\newcommand{\ingc}    {l'annonce de recrutement d'un ingénieur C++ }
+\newcommand{\ia}      {l'annonce de recrutement d'un programmeur IA }
+\newcommand{\online}  {l'annonce de recrutement d'un programmer online }
+% ----------- C/S-ITE --------
 \newcommand{\ecite}[1]{{\cite{#1}}}
 \newcommand{\offsite}[1]{\footnote{Site officiel: \url{#1}}}
-% == PDF ==
+% --------- MArkéting  -------------
+
 %\newcommand{\pdf}[1]{\begin{figure} \includepdf[pages=1]{Offres/#1} \caption{lol} \end{figure}}
 \newcommand{\pdf}[1]{ \includegraphics[width=7cm]{Offres/#1.pdf}  }
 % -------- ABREVIATION ---------- 
@@ -510,7 +517,7 @@ LinkedIn & \url{https://www.linkedin.com/pub/fabien-perrot/4/913/106} \\
 \hline{}
 \end{tabular}
 \label{tab::coord_sr}
-\caption{Coordonnées de \sr{}}
+\caption{Coordonnées de \cubical{}}
 \end{center}
 \end{table}
 
@@ -519,17 +526,203 @@ LinkedIn & \url{https://www.linkedin.com/pub/fabien-perrot/4/913/106} \\
 \paragraph{Introduction}
 Nous avons actuellement parcouru le métier en long et en large, depuis le recrutement jusqu'aux perspectives d'évolutions. Seulement, étudier le métier de président ne nous dit pas qu'il n'y a qu'un seul président; nous allons donc maintenant étudier l'état du métier sur le marché: les places sont-elles très limitées ou assez diverses ? Quelle genre de compétence est attendu à l'embauche ? Quelle paye espérer ? 
 \paragraph{Documentation}
-Pour cette étude du marché, je me suis rendu sur le site de l'\acrshort{afjv} \footnote{rappel de l'adresse \lil{ici celle des annonces} : \url{http://emploi.afjv.com/video_game_ads.php}} et ai pris arbitrairement cinq annonces de recherche de programmeur jeu vidéo. Seul un a été sélectionné car il m'intriguait grandement, celui d'ingénieur C++. Vous trouverez ces annonces sauvegardées en annexes avec leur lien internet si elles sont encore disponibles d'ici votre lecture. Rendez-vous en \ref{appendix} pour les annonces.
+Pour cette étude du marché, je me suis rendu sur le site de l'\acrshort{afjv} \cite{afjvjobs} et ai pris arbitrairement cinq annonces de recherche de programmeur jeu vidéo. Seul un a été sélectionné car il m'intriguait grandement, celui d'ingénieur C++. Vous trouverez ces annonces sauvegardées en annexes avec leur lien internet si elles sont encore disponibles d'ici votre lecture. Rendez-vous à la partie \ref{appendix} pour les annonces \lil{mieux vaut alors les consulter sur ordinateur et zoomer pour exploiter la caractéristique vectorielle du PDF}.
+
 \section{Profil type du candidat}
+Étudions au cas par cas le profil des personnes recherchées dans ces 5 annonces. L'échantillonage sera considéré suffisant pour cette ébauche d'étude.
+
+\subsection{Développeur Java}
+\begin{itemize}
+\item Études attendues de type Bac +5 type école d'ingénieur avec passion pour la programmation sur mobile,
+\item Expérience espérée de 1 ans.
+\item Compétences attendues  
+  \begin{itemize}
+    \item  Java,
+    \item  J2EE,
+    \item  Google App Engine.
+  \end{itemize}
+\item Personnalité 
+  \begin{itemize}
+    \item Autodidacte,
+    \item Esprit de synthèse,
+    \item Sociabilité.
+  \end{itemize}
+\item Avantages 
+  \begin{itemize}
+    \item Expérience dans le jeu vidéo,
+    \item Connaissance dans la programmation réseau.
+  \end{itemize}
+\item Localisation  Paris (75)
+\item Salaire : non renseigné.
+\end{itemize}
+
+\analyse{Je note qu'ils attendent un développeur jeune, \textbf{fraichement diplômé} qui s'y connaisse en Java et compétent dans une atmosphère de \textbf{travail d'équipe} et en \textbf{solitaire} \lil{débrouillard en soi}.}
+
+\subsection{Programmeur Gameplay UI}
+\begin{itemize}
+\item Études attendues non précisées, mais l'expérience de 5 ans suppose un niveau Bac +5.
+\item Expérience espérée de 5 ans ou plus.
+\item Compétences attendues  
+  \begin{itemize}
+    \item  Maitrise du C++,
+    \item  Flash,
+    \item  Action Script.
+  \end{itemize}
+\item Personnalité 
+  \begin{itemize}
+    \item Créativité,
+    \item Esprit critique,
+    \item Travail d'équipe.
+  \end{itemize}
+\item Avantages 
+  \begin{itemize}
+    \item Expérience dans la programmation UI,
+    \item Expérience sur un middleware,
+    \item Expérience jeu multijoueur.
+  \end{itemize}
+\item Localisation  Lyon (69)
+\item Salaire : non renseigné.
+\end{itemize}
+\analyse{Encore une fois la sociabilité du candidat est important et sa connaissance ne compte que dans l'essentiel \lil{je veux dire qu'il n'y a pas de \og bonus \fg{} à connaire d'autres langages}. Toutefois ils s'attendent à un \textbf{candidat expérimenté} qui de fait sait ce qu'il fait.}
+
+\subsection{Programmeur Online}
+\begin{itemize}
+\item Études non précisées, mais l'expérience de 5 ans suppose un niveau Bac +5.
+\item Expérience espérée de 5 ans ou plus .
+\item Compétences attendues  
+  \begin{itemize}
+    \item  Maitrise du C++,
+    \item  Protocol TCP, UDP,
+    \item  Connaissance réseau.
+  \end{itemize}
+\item Personnalité 
+  \begin{itemize}
+    \item Connaissances en débug réseau,
+    \item Sensibilité au game design,
+    \item Travail d'équipe.
+  \end{itemize}
+\item Avantages 
+  \begin{itemize}
+    \item Connaissance en PHP et Lua,
+    \item Connaissance SGBD et SQL,
+    \item Expérience jeu console.
+  \end{itemize}
+\item Localisation  Lyon (69)
+\item Salaire : non renseigné.
+\end{itemize}
+\analyse{Je note que les publieurs attendent une \textbf{personne expérimentée} s'y connaissant en C++ dont la connaissance de langages auxiliaires prime sur la sociabilité.}
+
+\subsection{Programmeur IA}
+\begin{itemize}
+\item Études d'ingénieur ou équivalent.
+\item Expérience espérée de 2 ans.
+\item Compétences attendues  
+  \begin{itemize}
+    \item  Maitrise du C++, C\# ,algorithme d'IA, Behavior Tree,
+    \item  Bon niveau en Anglais,
+  \end{itemize}
+\item Personnalité 
+  \begin{itemize}
+    \item Autonome,
+    \item Friand de prise d'initiative,
+    \item Travail d'équipe.
+  \end{itemize}
+\item Avantages 
+  \begin{itemize}
+    \item Développement logiciel type Qt,
+    \item Connaissance de l'esprit Mac.
+  \end{itemize}
+\item Localisation  Villeurbanne (69)
+\item Salaire : non renseigné
+\end{itemize}
+\analyse{Je note ici que l'expérience souhaitée est assez faible pour espérer pouvoir candidater en tant que \textbf{novice}. Une fois encore les connaissances prime sur le travail d'équippe car l'annonce dit que la personne recherchée travaillera seule sur l'IA.}
+
+
+\subsection{Ingénieur C++}
+\begin{itemize}
+\item Études attendues de type Bac +5 type école d'ingénieur avec passion pour la programmation sur mobile,
+\item Expérience espérée de 1 ans.
+\item Compétences attendues  
+  \begin{itemize}
+    \item  C et C++ sur Windows et Linux,
+    \item  Expérience personnelle d'algorithmique,
+    \item  Anglais fonctionnel.
+  \end{itemize}
+\item Personnalité 
+  \begin{itemize}
+    \item ambitieux, curieux, asticieux, persévérant \etc{},
+    \item Excellent sens du relationnel,
+    \item Ponctuel dans les délais à tenir.
+  \end{itemize}
+\item Avantages 
+  \begin{itemize}
+    \item Expérience 3D, CAO, PDF, ou IHM,
+  \end{itemize}
+\item Localisation  Lyon (69)
+\item Salaire : \numprint{2200} à \numprint{4100} \euro{} mensuel brut.
+\end{itemize}
+\analyse{Un \textbf{novice} est attendu, s'y connaissant dans le langage C \& co. L'annonce semble surtout s'intéresser à la personnalité \textbf{dynamique, intéressée et sociable} du candidat. En outre, je remarque que c'estl a seule annonce parlant du \textbf{salaire} escompté.}
+
+\subsection*{Bilan}
+\addcontentsline{toc}{subsection}{Bilan}
+\paragraph{}
+Les annonces étudiées sont partagées dans le profil type du candidat. Cela est très surement dû aux différents domaines sélectionnés mais je retiens d'elles que tant les \textbf{compétences} que la \textbf{personnalité} sont importantes à l'embauche. Je dirais même que la \textbf{dynamique} du candidat est capitale à sa bonne vue et que si sa \textbf{motivation} est assez grande, alors \emph{l'expérience souhaitée pourrait être négligée}. Retenons quand même que les annonces à propos de candidats senors sont à éviter pour les jeunes diplomés car ce sont les annonces requièrant le plus de compétence. Enfin, le salaire ne semble généralement pas fixé, 20\%{} des annonces étudiées \lil{certes sur un échnatillonnage ridicule} ne mentionnent pas le salaire prévu; dès lors je pense qu'il est négociable est un point clé à discuter à l'embauche.
 
 \section{Profil géographique}
-\section{Évolution à attendre}
-\section{Exemples d'offres}
+Toujours d'après les annonces étudiées mais en s'appuyant auxiliairement sur la liste des studios sur le site de l'\acrshort{afjv} \cite{afjvls}, nous remarquons que le profil géographique est négligeable. Là où il y a un studio il y a des offres. Ce n'est pas comme certains métiers \lil{citons mineurs,acteurs,analystes techniques (chimie, physique \etc{})} qui demandent une situation particulière; ici il y en presque partout en France excepté en Franche-Compté \lil{triste hasard pour le stage} alors c'est tout à fait négligeable.
+
+Nous noterons quand même trois carrefours qui semblent se dégager, à savoir: \emph{Lyon (69), Lille (59) et  Ile de France (75,77,78,91,92,93,94,95)}. 
+
+\section{Évolution du métier récemment et à venir}
+\paragraph{Dans le monde \lil{l'Amérique en fait}} 
+D'après un article de l'\acrshort{esa}\cite{artesa}, l'industrie du jeu vidéo en Amérique croît quatre fois plus vite que l'économie global. Depuis 2009 elle subit une croissance constante de 9\%{} embauchant \numprint{42000} professionnels au salaire annuel moyen de \numprint{95000}\${} soit \numprint{77977.43}\euro{} ou encore \numprint{6500}\euro{} mensuel ! Concluons avec une citation du président de \acrshort{esa}:
+\asw{Michael D. Gallagher}
+{
+The high-energy, high-tech video game industry is rapidly producing some of the most valuable jobs in the U.S. economy.
+
+Our industry is one of the nation's fastest growing economic sectors and represents tens-of-thousands of high-paying, well-educated professionals, artists and creators. \footnote
+{ 
+\emph{
+L'industrie du jeu vidéo de haute technologie produit rapidement les emplois les plus précieux de l'économie américaine.  Notre industrie est un des secteurs économiques les plus dynamiques du pays et représente des dizaines de milliers de professionnels, des artistes et des créateurs bien rémunérés et bien formés .}
+}
+}
+
+
+\paragraph{En France} 
+D'après un autre article\cite{artministre}, du gouvernement français cette fois:
+\asw{Ministère des affaires étrangères}
+{
+La France est aujourd'hui le deuxième plus gros producteur de jeux vidéo dans le monde après les Etats-Unis. Le succès des 300 entreprises françaises spécialisées dans ce secteur en pleine expansion, dont le chiffre d'affaires mondial est passé de 41,9 milliards à près de 60 milliards d'euros entre 2011 et 2012 et pourrait franchir le cap symbolique des 75 milliards d'ici l'an prochain, ne se dément pas.
+}
+Concernant l'emploi:
+\asw{\textsl{ibidem}}
+{
+Autre signe de la bonne santé de ce secteur : plus de 150 nouvelles offres d'emplois sont à pourvoir chaque mois dans les 28 métiers spécifiques qui sont mobilisés pour inventer les jeux vidéo de demain (management, design, imagerie, technologie, métiers supports \dots{}). 
+}
+
+\section*{Conclusions}
+\addcontentsline{toc}{section}{Conclusion}
+Les métiers du jeu vidéo sont en explosion totale, leur croissance est énorme, leur rentabilité leur rend la pareille et donc l'avenir de ses métiers possède de beaux jours pour encore longtemps avant de ne commencer à s'interroger.
 
 % ================ Comparaison avec mon propre profil=================
-\section{Situation actuelle}
+\chapter{Introspection orientée développeur jeu vidéo}
+Dans ce chapitre je vais me consacrer à étudier ma situation vis-à-vis de ce travail: où en suis-je d'après mes études ? D'après mes compétences ? Ma personalité et ma motivation ? 
+\section[Comparaison]{Comparaison entre la situation escomptée et la situation actuelle}
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|}
+\hline
+Domaine étudié & Situation présente & Situation Post-CMI & Situation Escomptée \\ \hline
+Niveau d'étude & Bientôt Bac+1 & Bac+5 (équivalent ingénieur) & Bac+5 (souvent ingénieur) \\
+Compétences & Pratique du C++ et \LaTeX{}, bases d'HTML \&{} CSS & Divers langages de programmation, compréhension matériel de l'ordinateur, tout domaine au moins survolé & Langage de programmation orienté C \&{} co., langages exotiques \\
+Personnalité & Motivé, intéressé, peu sociable & Inconnue mais surement similaire & Dynamique, intéressé, très sociable \\
+
+
+\end{tabular}
+\caption{Comparaison de ma situation à celle nécessaire}
+\label{tab::comp}
+\end{table}
+
 %Opposition à:
-\section{Situation escomptée}
 
 \section{Démarches entreprises}
 %oppositions à:
@@ -542,6 +735,9 @@ Pour cette étude du marché, je me suis rendu sur le site de l'\acrshort{afjv} 
 %%Conclure sur le fait de monter son entreprise ?
 
 \newpage
+\appendix
+\chapter{Étude marchétaire}
+\label{appendix}
 \pdf{developper_java}
 \pdf{gameplay_UI}
 \pdf{programmer_online}
@@ -553,16 +749,11 @@ Pour cette étude du marché, je me suis rendu sur le site de l'\acrshort{afjv} 
 \renewcommand{\bibname}{Sitographie}
 \bibliography{sitographie}
 \addcontentsline{toc}{chapter}{Sitography}
-% ===== TOC ================
-\shorttoc{Table des matières}{3}
-\tableofcontents % à retirer à la fin !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-\addcontentsline{toc}{chapter}{Table des matières}
-% ===== ABSTRACT ==========
-\begin{abstract} %résumé
-\end{abstract}
-
 %====== GLOSSARIES =========
-\printglossaries
+\printglossary[title=List of Terms,toctitle=Termes et abréviations]
 \label{glos}
 \addcontentsline{toc}{chapter}{Glossaire}
+% ===== TOC ================
+\tableofcontents % 
+\addcontentsline{toc}{chapter}{Table des matières}
 \end{document}
