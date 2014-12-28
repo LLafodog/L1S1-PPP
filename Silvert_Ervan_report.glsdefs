@@ -58,6 +58,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{enjmin}{}%
+{%
+\gls@defglossaryentry{enjmin}%
+{%
+name={ENJMIN},%
+sort={ENJMIN},%
+type={acronym},%
+first={\IeC {\'E}cole National du Jeu et des M\IeC {\'e}dia Interactifs Num\IeC {\'e}riques (ENJMIN)},%
+firstplural={\IeC {\'E}cole National du Jeu et des M\IeC {\'e}dia Interactifs Num\IeC {\'e}riquess(ENJMINs)},%
+text={ENJMIN},%
+plural={ENJMINs},%
+description={École National du Jeu et des Média Interactifs Numériques},%
+descriptionplural={École National du Jeu et des Média Interactifs Numériques\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\IeC {\'E}cole National du Jeu et des M\IeC {\'e}dia Interactifs Num\IeC {\'e}riques},%
+longplural={\IeC {\'E}cole National du Jeu et des M\IeC {\'e}dia Interactifs Num\IeC {\'e}riquess},%
+short={ENJMIN},%
+shortplural={ENJMINs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{isep}{}%
+{%
+\gls@defglossaryentry{isep}%
+{%
+name={ISEP},%
+sort={ISEP},%
+type={acronym},%
+first={Institut sup\IeC {\'e}rieur d'\IeC {\'e}lectronique de Paris (ISEP)},%
+firstplural={Institut sup\IeC {\'e}rieur d'\IeC {\'e}lectronique de Pariss(ISEPs)},%
+text={ISEP},%
+plural={ISEPs},%
+description={Institut supérieur d'électronique de Paris},%
+descriptionplural={Institut supérieur d'électronique de Paris\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Institut sup\IeC {\'e}rieur d'\IeC {\'e}lectronique de Paris},%
+longplural={Institut sup\IeC {\'e}rieur d'\IeC {\'e}lectronique de Pariss},%
+short={ISEP},%
+shortplural={ISEPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{poo}{}%
 {%
 \gls@defglossaryentry{poo}%
@@ -143,6 +203,66 @@ long={Entertainment Software Association},%
 longplural={Entertainment Software Associations},%
 short={ESA},%
 shortplural={ESAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cmi}{}%
+{%
+\gls@defglossaryentry{cmi}%
+{%
+name={CMI},%
+sort={CMI},%
+type={acronym},%
+first={Cursus Master en Ing\IeC {\'e}ni\IeC {\'e}rie (CMI)},%
+firstplural={Cursus Master en Ing\IeC {\'e}ni\IeC {\'e}ries(CMIs)},%
+text={CMI},%
+plural={CMIs},%
+description={Cursus Master en Ingéniérie},%
+descriptionplural={Cursus Master en Ingéniérie\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cursus Master en Ing\IeC {\'e}ni\IeC {\'e}rie},%
+longplural={Cursus Master en Ing\IeC {\'e}ni\IeC {\'e}ries},%
+short={CMI},%
+shortplural={CMIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rpg}{}%
+{%
+\gls@defglossaryentry{rpg}%
+{%
+name={RPG},%
+sort={RPG},%
+type={acronym},%
+first={Role Play Game, un style de jeu consistant \IeC {\`a} incarner un personnage dans une histoire donn\IeC {\'e}e. (RPG)},%
+firstplural={Role Play Game, un style de jeu consistant \IeC {\`a} incarner un personnage dans une histoire donn\IeC {\'e}e.s(RPGs)},%
+text={RPG},%
+plural={RPGs},%
+description={Role Play Game, un style de jeu consistant à incarner un personnage dans une histoire donnée.},%
+descriptionplural={Role Play Game, un style de jeu consistant à incarner un personnage dans une histoire donnée.\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Role Play Game, un style de jeu consistant \IeC {\`a} incarner un personnage dans une histoire donn\IeC {\'e}e.},%
+longplural={Role Play Game, un style de jeu consistant \IeC {\`a} incarner un personnage dans une histoire donn\IeC {\'e}e.s},%
+short={RPG},%
+shortplural={RPGs},%
 counter={page},%
 parent={},%
 %
